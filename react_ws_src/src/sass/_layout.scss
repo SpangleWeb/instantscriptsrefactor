@@ -1,0 +1,35 @@
+.container {
+	max-width:1230px;
+	margin:0 auto;
+	position:relative;
+	margin-top:0;
+	padding:0 30px;
+}
+
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;  
+  // overflow:hidden;
+}
+#root {
+	height:100%;
+}
+#main_content {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+  // This is the full page height minus the header and footer
+  height: calc(100vh - 110px);
+  overflow: scroll;
+  width: 100vw;
+  margin-top: 60px
+;}

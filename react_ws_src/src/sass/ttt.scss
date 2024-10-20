@@ -1,0 +1,199 @@
+$primary-color: #E072A4;
+$text-color: #050404;
+$background-color: #FFFFFF;
+$box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+$win-color: #1B998B;
+$hover-color: #5386E4;
+
+section#TTT_game {
+    .input_holder {
+        width: 100%;
+        margin-bottom: 25px;
+
+        &.message {
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        label {
+            @include font-size(16px);
+            display: block;
+            margin-bottom: 11px;
+            width: 100%;
+            font-weight: 300;
+
+            span.required {
+                display: none;
+            }
+        }
+
+        .input {
+            @include textInput(90%);
+            border: 1px solid #ebe6f1;
+        }
+
+        .input.password {
+            @include textInput(90%);
+            border: 1px solid #ebe6f1;
+        }
+
+        .input.textarea {
+            @include textInput(95%);
+            border: 1px solid #ebe6f1;
+            height: 100px;
+            line-height: 1.5em;
+            padding-top: 10px;
+        }
+
+        &.select_option select {
+            border-radius: 7px;
+            border: none;
+            padding: 0 18px;
+            height: 46px;
+            background: #fff;
+            border: 1px solid #ebe6f1;
+            box-shadow: 0px 4px 0px 0px #ebe6f1;
+            color: #888888;
+            font-style: italic;
+            @include font-size(18px);
+            font-weight: 300;
+            width: 90%;
+        }
+
+        &.error {
+            label {
+                .required {
+                    display: inline;
+                    color: $colorSecondary;
+                }
+            }
+
+            .input {
+                @include textInput(90%);
+                border: 1px solid $colorSecondary;
+                color: $colorSecondary;
+            }
+
+            .input.textarea {
+                @include textInput(95%);
+                border: 1px solid $colorSecondary;
+                height: 100px;
+                line-height: 1.5em;
+                padding-top: 10px;
+            }
+
+            ::-webkit-input-placeholder {
+                color: $colorSecondary;
+            }
+
+            :-moz-placeholder {
+                color: $colorSecondary;
+                opacity: 1;
+            }
+
+            ::-moz-placeholder {
+                color: $colorSecondary;
+                opacity: 1;
+            }
+
+            :-ms-input-placeholder {
+                color: $colorSecondary;
+            }
+
+            :placeholder-shown {
+                color: $colorSecondary;
+            }
+        }
+
+        &.select_option.error select {
+            border: 1px solid $colorSecondary;
+            color: $colorSecondary;
+        }
+    }
+
+    .button {
+        @include button(179px, 50px, 4px, $colorSecondary, $colorSecondaryDark, #fff);
+        font-family: $hdrFont;
+        @include font-size(18px);
+        margin-top: 24px;
+
+        &.long {
+            width: 300px;
+        }
+    }
+
+    #game_stat {
+        background: #F9F9F9;
+        margin: 10px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 12px;
+        font-family: $hdrFont;
+
+        #game_stat_msg {
+            @include font-size(28px);
+        }
+
+        #game_turn_msg {
+            padding-top: 5px;
+            @include font-size(22px);
+        }
+    }
+
+    #game_board {
+
+        table {
+            background: #f9f9f9;
+            margin: 10px;
+            border-collapse: collapse;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        td {
+            width: 130px;
+            height: 130px;
+            vertical-align: middle;
+            text-align: center;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background: #fff;
+            transition: background 0.3s ease;
+
+            &:hover {
+                background: $hover-color;
+            }
+
+            &.win {
+                background: $win-color;
+                color: #fff;
+                font-weight: bold;
+            }
+        }
+
+        .vbrd {
+            border-left: 7px solid #000;
+            border-right: 7px solid #000;
+        }
+
+        .hbrd {
+            border-top: 7px solid #000;
+            border-bottom: 7px solid #000;
+        }
+    }
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.welcome-title {
+    text-align: center;
+    width: 100%;
+}

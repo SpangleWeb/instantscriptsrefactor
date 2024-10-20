@@ -1,0 +1,179 @@
+$primary-color: #E072A4;
+$text-color: #050404;
+$background-color: #FFFFFF;
+$box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+
+#msg_bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #430e8b;
+  color: #fff;
+  @include font-size(15px);
+  line-height: 25px;		
+  font-weight: 300;
+  text-align: center;
+  z-index: 32;
+
+  position: relative;
+  height: auto;
+  line-height: 48px;
+  background: #000;
+
+  .container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 100px;
+    width: 100%;
+
+    position: relative;
+    margin: 0 auto;
+    height: auto;
+    max-width: 1170px;
+  }
+
+  span.one_line {
+    display: inline-block;
+  }
+
+  .emphasize {
+    font-weight: 700;
+    font-style: italic;			
+  }
+
+  .exclaim {
+    color: $colorSecondary;
+    @include font-size(23px);
+    font-weight: 700;
+    display: inline-block;
+    margin-right: 15px;
+
+    span {
+      display: inline-block;
+      position: absolute;
+      top: 0px;
+    }
+  }
+
+  a.close {
+    position: fixed;
+    right: 15px;
+    top: 20px;
+    @include font-size(23px);
+    color: $colorSecondary;
+
+    &:hover {
+      opacity: .9;
+    }
+    &:active {
+      opacity: .8;
+    }
+
+    position: absolute;
+    right: 30px;
+    top: 13px;
+  }
+
+  .button {
+    @include button(146px, 30px, 3px, $colorSecondary, $colorSecondaryDark, #fff);
+    font-family: $hdrFont;
+    @include font-size(12px);
+    margin: 0 auto;
+    margin-top: 20px;
+    display: block;
+
+    display: inline;
+    margin: 0 0 0 5px;
+
+    &:active {
+      box-shadow: 0px 1px 0px 0px #000;
+      margin-top: 5px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 0 24px;
+  background-color: $background-color;
+  box-shadow: $box-shadow;
+  height: 60px;
+
+  .navbar-brand {
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-menu {
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .navbar-menu-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+
+      .navbar-menu-item {
+        margin-right: 24px;
+
+        .navbar-menu-item-link {
+          text-decoration: none;
+          display: flex;
+          justify-self: center;
+          align-items: center;
+          color: $text-color;
+
+          &:hover {
+            color: $primary-color;
+            transition: color 0.3s ease;
+          }
+
+          &.active {
+            color: $primary-color; // Change to your desired clicked color
+            transition: color 0.3s ease; // Smooth transition for clicked state
+          }
+
+          .navbar-menu-item-icon {
+            padding-right: 6px;
+          }
+
+          .p-name {
+            display: none; // Hide by default
+
+            @media (min-width: 400px) {
+              display: inline; // Show when screen width is greater than 400px
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar-brand-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-brand-image {
+  height: 50px;
+  width: auto;
+}
